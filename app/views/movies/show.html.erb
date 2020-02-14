@@ -1,0 +1,18 @@
+<h1><%= @movie.name %></h1>
+<h3>Creation Year: <%= @movie.creation_year %></h3>
+<h3>Genre: <%= @movie.genre %></h3><br>
+
+<h3>Actors Youngest to Oldest: </h3>
+<% @movie.actors_ordered.each do |actor| %>
+  <p><%= actor.name %></p>
+<% end %>
+
+<h3>Average Actors Age: <%= @movie.average_actors_age %></h3>
+
+<%= form_tag "/movies/#{@movie.id}" do %>
+  <%= label_tag :name %><br>
+  <%= text_field_tag :name %><br>
+  <%= submit_tag 'Enter' %>
+<% end %>
+
+<%= @name %>
